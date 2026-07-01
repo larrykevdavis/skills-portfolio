@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	<title>Dasho - Bootstrap 5 Admin Template</title>
+	<!-- HTML5 Shim and Respond.js IE11 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 11]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+	<!-- Meta -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="description"
+		content="Dasho Bootstrap admin template made using Bootstrap 5 and it has huge amount of ready made feature, UI components, pages which completely fulfills any dashboard needs." />
+	<meta name="keywords"
+		content="admin templates, bootstrap admin templates, bootstrap 5, dashboard, dashboard templets, sass admin templets, html admin templates, responsive, bootstrap admin templates free download,premium bootstrap admin templates, Dasho, Dasho bootstrap admin template">
+	<meta name="author" content="Phoenixcoded" />
+
+   <!-- fontawesome icon -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/fontawesome-all.min.css') }}">
+    <!-- animation css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='plugins/animation/css/animate.min.css') }}" >
+
+    <!-- notification css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='plugins/notification/css/notification.min.css') }}">
+
+    <!-- vendor css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<!-- [ auth-signin ] start -->
+<div class="auth-wrapper">
+	<div style="width: 50%;">
+		<div class="card">
+			<div class="row align-items-center">
+				<div class="col-md-12">
+					{% if session['login']=='success' %}
+                    <p style="color: green">Login Succesfull</p>
+                    {% set temp = session.pop("login", none)   %}
+                    {% elif session['login']=='error' %}
+                    <p style="color: red">Incorrect Login Credentials</p>
+                    {% set temp = session.pop("login", none)   %}
+                    {% endif%}
+					<div class="card-body">
+						<form action="/login" method="POST">
+							<h4 class="mb-3 f-w-400">Login</h4>
+							<div class="form-group mb-2">
+								<label class="form-label">Enter Email</label>
+								<input type="email" class="form-control" placeholder="Email" name="email">
+							</div>
+							<div class="form-group mb-3">
+								<label class="form-label">Enter Password</label>
+								<input type="password" class="form-control" placeholder="Password" name="password">
+							</div>
+							
+							<input type="submit" class="btn btn-primary mb-4 btf" value="Login">
+						</form>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+</div>
+<!-- [ auth-signin ] end -->
+
+<script src="{{ url_for('static', filename='plugins/bootstrap/js/popper.min.js') }}"src="../assets/plugins/bootstrap/js/popper.min.js"></script>
+<script src="{{ url_for('static', filename='plugins/bootstrap/js/bootstrap.bundle.min.js') }}"src="../assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="{{ url_for('static', filename='js/pcoded.min.js') }}"src="../assets/js/pcoded.min.js"></script>
+<script src="{{ url_for('static', filename='js/menu-setting.js') }}"src="../assets/js/menu-setting.js"></script>
+
+<!-- dashboard-custom js -->
+<script src="{{ url_for('static', filename='js/pages/dashboard-analytics.js') }}"></script>
+
+
+
+</body>
+
+</html>

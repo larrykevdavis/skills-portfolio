@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Dasho - Bootstrap 5 Admin Template</title>
+    <!-- HTML5 Shim and Respond.js IE11 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 11]>
+    	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    	<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    	<![endif]-->
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description"
+    	content="Dasho Bootstrap admin template made using Bootstrap 5 and it has huge amount of ready made feature, UI components, pages which completely fulfills any dashboard needs." />
+    <meta name="keywords"
+    	content="admin templates, bootstrap admin templates, bootstrap 5, dashboard, dashboard templets, sass admin templets, html admin templates, responsive, bootstrap admin templates free download,premium bootstrap admin templates, Dasho, Dasho bootstrap admin template">
+    <meta name="author" content="Phoenixcoded" />
+
+   <!-- fontawesome icon -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/fontawesome-all.min.css') }}">
+    <!-- animation css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='plugins/animation/css/animate.min.css') }}" >
+
+    <!-- notification css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='plugins/notification/css/notification.min.css') }}">
+
+    <!-- vendor css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body class="">
+	<!-- [ Pre-loader ] start -->
+	<div class="loader-bg">
+		<div class="loader-track">
+			<div class="loader-fill"></div>
+		</div>
+	</div>
+	<!-- [ Pre-loader ] End -->
+		    <!-- [ navigation menu ] start -->
+    <nav class="pcoded-navbar menupos-fixed menu-dark menu-item-icon-style6 ">
+        <div
+            class="navbar-wrapper ">
+            <div class="navbar-brand header-logo">
+                <a class="mobile-menu" id="mobile-collapse"><span></span></a>
+            </div>
+            <div class="navbar-content scroll-div" id="layout-sidenav">
+                <ul class="nav pcoded-inner-navbar sidenav-inner">
+                    <li class="nav-item">
+                        <a class="nav-link"><span class="pcoded-mtext">Dashboard</span></a>
+                        <ul class="pcoded-submenu">
+                            <li class=""><a href="/airport-dashboard" class=""><span class="pcoded-micon"><i class="feather icon-home"></i></span>Home</a></li>
+                            <li class=""><a href="/airline-information" class=""><span class="pcoded-micon"><i class="feather icon-home"></i></span>Airlines</a></li>
+                            <li class=""><a href="/aircraft-information" class=""><span class="pcoded-micon"><i class="feather icon-home"></i></span>Aircrafts</a></li>
+                            <li class="active"><a href="/route-information" class=""><span class="pcoded-micon"><i class="feather icon-home"></i></span>Routes</a></li>
+                            <li class=""><a href="/flight-information" class=""><span class="pcoded-micon"><i class="feather icon-home"></i></span>Flights</a></li>
+                             <li class=""><a href="/booking-information" class=""><span class="pcoded-micon"><i class="feather icon-home"></i></span>Bookings</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- [ navigation menu ] end -->
+
+	
+<!-- [ Header ] start -->
+	<header class="navbar pcoded-header navbar-expand-lg navbar-light headerpos-fixed">
+		
+			<div class="m-header">
+				<a class="mobile-menu" id="mobile-collapse1" href="#!"><span></span></a>
+			</div>
+			<a class="mobile-menu" id="mobile-header" href="#!">
+				<i class="feather icon-more-horizontal"></i>
+			</a>
+			<div class="collapse navbar-collapse">
+				<a href="#!" class="mob-toggler"></a>
+				<ul class="navbar-nav me-auto">
+					<li class="nav-item">
+						<div class="main-search open">
+							<div class="input-group">
+								<input type="text" id="m-search" class="form-control" placeholder="Search . . .">
+								<a href="#!" class="input-group-append search-close">
+									<i class="feather icon-x input-group-text"></i>
+								</a>
+								<span class="ms-1 input-group-append search-btn btn btn-primary">
+									<i class="feather icon-search input-group-text"></i>
+								</span>
+							</div>
+						</div>
+					</li>
+				</ul>
+				<ul class="navbar-nav ms-auto">
+					<ul class="navbar-nav ms-auto">
+					<li>
+						<div class="dropdown drp-user">
+							<a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">
+								<i class="icon feather icon-user"></i>
+							</a>
+							<div class="dropdown-menu dropdown-menu-end profile-notification">
+								<ul class="pro-body">
+									<li><a href="" class="dropdown-item"><i
+												class="feather icon-power text-danger"></i> Logout</a></li>
+								</ul>
+							</div>
+						</div>
+					</li>
+				</ul>
+				</ul>
+			</div>
+	</header>
+	<!-- [ Header ] end -->
+	
+
+
+<!-- [ Main Content ] start -->
+<div class="pcoded-main-container">
+    <div class="pcoded-wrapper">
+        <div class="pcoded-content">
+            <div class="pcoded-inner-content">
+                <div class="main-body">
+                    <div class="page-wrapper">
+                        <!-- [ breadcrumb ] start -->
+                        <div class="page-header">
+                            <div class="page-block">
+                                <div class="row align-items-center">
+                                    <div class="col-md-12">
+                                        <div class="page-header-title">
+                                            <h5 class="m-b-10">Project</h5>
+                                        </div>
+                                        <ul class="breadcrumb">
+                                            <li class="breadcrumb-item"><a href=""><i
+                                                        class="feather icon-home"></i></a></li>
+                                            <li class="breadcrumb-item"><a href="">Routes Information</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- [ breadcrumb ] end -->
+                        <!-- [ Main Content ] start -->
+                        <div class="row">
+                            <!-- Project statistic start -->
+                            <div class="col-xl-12">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="card statustic-card">
+                                            <div class="card-header bg-c-blue">
+                                                <h5 class="text-white">Add Route</h5>
+                                            </div>
+                                            <div class="card-body text-center">
+                                            	{% if session['res']=='success' %}
+                                                        <p style="color: green">Route Added Succesfully</p>
+                                                        {% set temp = session.pop("res", none)   %}
+                                                    {% elif session['res']=='error' %}
+                                                        <p style="color: red">Route Not Added</p>
+                                                        {% set temp = session.pop("res", none)   %}
+                                                    {% endif%}
+
+                                                    {% if session['updateres']=='success' %}
+                                                        <p style="color: green">Route Updated Succesfully</p>
+                                                        {% set temp = session.pop("updateres", none)   %}
+                                                    {% elif session['updateres']=='error' %}
+                                                        <p style="color: red">Route Not Updated</p>
+                                                        {% set temp = session.pop("updateress", none)   %}
+                                                    {% endif%}
+                                                    <form action="/add-route" method="POST" id="addform">
+                                                    <input type="text" class="form-control" name="routeid" id="routeid" hidden>
+                                                    <div class="row mb-3">
+                                                        <label for="inputEmail3"
+                                                            class="col-sm-3 col-form-label">Route Name</label>
+                                                        <div class="col-sm-9">
+                                                            <input type="text" class="form-control" name="name" id="name">
+                                                        </div>
+                                                    </div>
+                                                    <div class="row mb-3">
+                                                        <label for="inputPassword3"
+                                                            class="col-sm-3 col-form-label">Route Type</label>
+                                                        <div class="col-sm-9">
+                                                            <select class="form-control" name="rtype" id="rtype">
+                                                            	<option value="">Select Route</option>
+                                                            	<option value="domestic">Domestic</option>
+                                                            	<option value="foreign">Foreign</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+
+                                                     <div class="row mb-3">
+                                                        <label for="inputEmail3"
+                                                            class="col-sm-6 col-form-label">Route Source</label>
+                                                        <div class="col-sm-6">
+                                                            <input type="text" class="form-control" name="source" id="source">
+                                                        </div>
+                                                    </div>
+
+                                                     <div class="row mb-3">
+                                                        <label for="inputEmail3"
+                                                            class="col-sm-6 col-form-label">Route Destination</label>
+                                                        <div class="col-sm-6">
+                                                            <input type="text" class="form-control" name="destination" id="destination">
+                                                        </div>
+                                                    </div>
+
+                                                
+                                                   
+                                                    <input type="submit" class="btn btn-primary mb-4" value="Add" id="submit">
+                                                </form>
+                                            </div>
+                                           
+                                        </div>
+                                    </div>
+
+                               		<div class="col-xl-8 col-md-6">
+		                                <div class="card user-list table-card">
+		                                    <div class="card-header">
+		                                        <h5>All Routes</h5>
+		                                    </div>
+		                                    <div class="card-body pb-0">
+		                                        <div class="table-responsive">
+		                                            <div class="user-scroll" style="height:430px;position:relative;">
+		                                                <table class="table table-hover m-0">
+		                                                    <thead>
+		                                                        <tr>
+		                                                            <th>Route ID</th>
+		                                                            <th>Route Name</th>
+		                                                            <th>Route Type</th>
+		                                                            <th>Route Source</th>
+		                                                            <th>Route Destination</th>
+		                                                            
+		                                                    </thead>
+		                                                    <tbody>
+		                                                        {% for route_dict in route_list %}
+                                                                    <tr>
+                                                                        <td id="routeid_{{route_dict['route_id'] }}">{{ route_dict['route_id'] }}</td>
+                                                                        <td id="name_{{route_dict['route_id'] }}">{{ route_dict['route_name'] }}</td>
+                                                                        <td id="rtype_{{route_dict['route_id'] }}">{{ route_dict['route_type'] }}</td>
+                                                                        <td id="source_{{route_dict['route_id'] }}">{{ route_dict['route_source'] }}</td>
+                                                                        <td id="destination_{{route_dict['route_id'] }}">{{ route_dict['route_destination'] }}</td>
+                                                                      
+                                                                        <th><button class="btn btn-success" onclick='update_modal("{{route_dict["route_id"] }}")'>Update</button></th>
+                                                                        <th><a class="btn btn-danger" href="/delete-route/{{route_dict['route_id'] }}">Delete</a></th>
+                                                                    </tr>
+                                                                {% endfor %}
+		                                                    </tbody>
+		                                                </table>
+		                                            </div>
+		                                        </div>
+		                                    </div>
+		                                </div>
+		                            </div> 
+                                </div>
+                            </div>
+                           
+                        </div>
+                        <!-- [ Main Content ] end -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- [ Main Content ] end -->
+
+
+
+
+
+<script src="{{ url_for('static', filename='plugins/bootstrap/js/popper.min.js') }}"src="../assets/plugins/bootstrap/js/popper.min.js"></script>
+<script src="{{ url_for('static', filename='plugins/bootstrap/js/bootstrap.bundle.min.js') }}"src="../assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="{{ url_for('static', filename='js/pcoded.min.js') }}"src="../assets/js/pcoded.min.js"></script>
+<script src="{{ url_for('static', filename='js/menu-setting.js') }}"src="../assets/js/menu-setting.js"></script>
+
+<!-- dashboard-custom js -->
+<script src="{{ url_for('static', filename='js/pages/dashboard-analytics.js') }}"></script>
+
+<script type="text/javascript">
+    function update_modal(id){
+    	var routeid="routeid_"+id.toString()
+        var nameid="name_"+id.toString()
+        var rtypeid="rtype_"+id.toString()
+        var sourceid="source_"+id.toString()
+        var destinationid="destination_"+id.toString()
+        
+        
+        document.getElementById('routeid').value= document.getElementById(routeid).innerHTML
+        document.getElementById('name').value= document.getElementById(nameid).innerHTML
+        document.getElementById('rtype').value= document.getElementById(rtypeid).innerHTML
+        document.getElementById('source').value= document.getElementById(sourceid).innerHTML
+        document.getElementById('destination').value= document.getElementById(destinationid).innerHTML
+
+        document.getElementById('submit').value = "Update"
+        document.getElementById('addform').action="/update-route"
+
+    }
+</script>
+
+
+</body>
+
+</html>

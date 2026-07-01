@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Dasho - Bootstrap 5 Admin Template</title>
+    <!-- HTML5 Shim and Respond.js IE11 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 11]>
+    	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    	<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    	<![endif]-->
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description"
+    	content="Dasho Bootstrap admin template made using Bootstrap 5 and it has huge amount of ready made feature, UI components, pages which completely fulfills any dashboard needs." />
+    <meta name="keywords"
+    	content="admin templates, bootstrap admin templates, bootstrap 5, dashboard, dashboard templets, sass admin templets, html admin templates, responsive, bootstrap admin templates free download,premium bootstrap admin templates, Dasho, Dasho bootstrap admin template">
+    <meta name="author" content="Phoenixcoded" />
+
+
+    <!-- fontawesome icon -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/fontawesome-all.min.css') }}">
+    <!-- animation css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='plugins/animation/css/animate.min.css') }}" >
+
+    <!-- notification css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='plugins/notification/css/notification.min.css') }}">
+
+    <!-- vendor css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body class="">
+	<!-- [ Pre-loader ] start -->
+	<div class="loader-bg">
+		<div class="loader-track">
+			<div class="loader-fill"></div>
+		</div>
+	</div>
+	<!-- [ Pre-loader ] End -->
+
+    <!-- [ navigation menu ] start -->
+    <nav class="pcoded-navbar menupos-fixed menu-dark menu-item-icon-style6 ">
+        <div
+            class="navbar-wrapper ">
+            <div class="navbar-brand header-logo">
+                <a class="mobile-menu" id="mobile-collapse"><span></span></a>
+            </div>
+            <div class="navbar-content scroll-div" id="layout-sidenav">
+                <ul class="nav pcoded-inner-navbar sidenav-inner">
+                    <li class="nav-item">
+                        <a class="nav-link"><span class="pcoded-mtext">Dashboard</span></a>
+                        <ul class="pcoded-submenu">
+                            <li class=""><a href="/book-flight" class=""><span class="pcoded-micon"><i class="feather icon-home"></i></span>Book Flight</a></li>
+                            <li class=""><a href="/booking-history" class=""><span class="pcoded-micon"><i class="feather icon-home"></i></span>Booking History</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- [ navigation menu ] end -->
+
+	
+
+	<!-- [ Header ] start -->
+	<header class="navbar pcoded-header navbar-expand-lg navbar-light headerpos-fixed">
+		
+			<div class="m-header">
+				<a class="mobile-menu" id="mobile-collapse1" href="#!"><span></span></a>
+			</div>
+			<a class="mobile-menu" id="mobile-header" href="#!">
+				<i class="feather icon-more-horizontal"></i>
+			</a>
+			<div class="collapse navbar-collapse">
+				<a href="#!" class="mob-toggler"></a>
+				<ul class="navbar-nav me-auto">
+					<li class="nav-item">
+						<div class="main-search open">
+							<div class="input-group">
+								<input type="text" id="m-search" class="form-control" placeholder="Search . . .">
+								<a href="#!" class="input-group-append search-close">
+									<i class="feather icon-x input-group-text"></i>
+								</a>
+								<span class="ms-1 input-group-append search-btn btn btn-primary">
+									<i class="feather icon-search input-group-text"></i>
+								</span>
+							</div>
+						</div>
+					</li>
+				</ul>
+				<ul class="navbar-nav ms-auto">
+					<ul class="navbar-nav ms-auto">
+					<li>
+						<div class="dropdown drp-user">
+							<a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">
+								<i class="icon feather icon-user"></i>
+							</a>
+							<div class="dropdown-menu dropdown-menu-end profile-notification">
+								<ul class="pro-body">
+									<li><a href="" class="dropdown-item"><i
+												class="feather icon-power text-danger"></i> Logout</a></li>
+								</ul>
+							</div>
+						</div>
+					</li>
+				</ul>
+				</ul>
+			</div>
+	</header>
+	<!-- [ Header ] end -->
+
+
+<!-- [ Main Content ] start -->
+<div class="pcoded-main-container">
+    <div class="pcoded-wrapper">
+        <div class="pcoded-content">
+            <div class="pcoded-inner-content">
+                <div class="main-body">
+                    <div class="page-wrapper">
+                        <!-- [ breadcrumb ] start -->
+                        <div class="page-header">
+                            <div class="page-block">
+                                <div class="row align-items-center">
+                                    <div class="col-md-12">
+                                        <div class="page-header-title">
+                                            <h5 class="m-b-10">Project</h5>
+                                        </div>
+                                        <ul class="breadcrumb">
+                                            <li class="breadcrumb-item"><a href="index.html"><i
+                                                        class="feather icon-home"></i></a></li>
+                                            <li class="breadcrumb-item"><a href="#!">Reviews</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- [ breadcrumb ] end -->
+                        <!-- [ Main Content ] start -->
+                        <div class="row">
+                            <!-- Project statistic start -->
+                            <div class="col-xl-12">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="card statustic-card">
+                                            <div class="card-header bg-c-blue">
+                                                <h5 class="text-white">Add Reviews</h5>
+                                            </div>
+
+
+                                           
+                                            <div class="card-body text-center">
+                                                    <form action="/add-review" method="POST" id="addform">
+                                                    <div class="row mb-3">
+
+                                                    {% if session['res']=='success' %}
+                                                        <p style="color: green">Review Added Succesfully</p>
+                                                        {% set temp = session.pop("res", none)   %}
+                                                    {% elif session['res']=='error' %}
+                                                        <p style="color: red">Review Not Added</p>
+                                                        {% set temp = session.pop("res", none)   %}
+                                                    {% endif%}
+
+                                                    {% if session['updateres']=='success' %}
+                                                        <p style="color: green">Review Updated Succesfully</p>
+                                                        {% set temp = session.pop("updateres", none)   %}
+                                                    {% elif session['updateres']=='error' %}
+                                                        <p style="color: red">Review Not Updated</p>
+                                                        {% set temp = session.pop("updateress", none)   %}
+                                                    {% endif%}
+
+
+
+                                                        <label for="inputEmail3"
+                                                            class="col-sm-3 col-form-label">Booking ID</label>
+                                                        <div class="col-sm-9">
+                                                            <input type="text" class="form-control" name="bookingid" id="bookingid" value="{{session['booking_id']}}">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row mb-3">
+                                                        <label for="inputEmail3"
+                                                            class="col-sm-3 col-form-label">Review title</label>
+                                                        <div class="col-sm-9">
+                                                            <input type="text" class="form-control" name="title" id="tile">
+                                                        </div>
+                                                    </div>
+                                                    <div class="row mb-3">
+                                                        <label for="inputEmail3"
+                                                            class="col-sm-9 col-form-label">Review</label>
+                                                        <div class="col-sm-12">
+                                                            <textarea  class="form-control" name="reivew" id="review" rows="10" cols="20"></textarea>
+                                                        </div>
+                                                    </div>
+                                                     <div class="row mb-3">
+                                                        <label for="inputEmail3"
+                                                            class="col-sm-3 col-form-label">Rating (1-10)</label>
+                                                        <div class="col-sm-9">
+                                                            <input type="text" class="form-control" name="rating" id="rating">
+                                                        </div>
+                                                    </div>
+                                                     <div class="row mb-3">
+                                                        <label for="inputEmail3"
+                                                            class="col-sm-3 col-form-label">Value for Money</label>
+                                                        <div class="col-sm-9">
+                                                            <select name="value" class="form-control">
+                                                                <option value="1">Yes</option>
+                                                                <option value="0">No</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                     <div class="row mb-3">
+                                                        <label for="inputEmail3"
+                                                            class="col-sm-3 col-form-label">Recommend to Others</label>
+                                                        <div class="col-sm-9">
+                                                            <select name="recommend" class="form-control">
+                                                                <option value="1">Yes</option>
+                                                                <option value="0">No</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                            
+                                                    <input type="submit" class="btn btn-primary mb-4" value="Add" id="submit">
+                                                </form>
+                                            </div>
+                                           
+                                        </div>
+                                    </div>
+
+                               		<div class="col-xl-8 col-md-6">
+		                                <div class="card user-list table-card">
+		                                    <div class="card-header">
+		                                        <h5>All Reviews</h5>
+		                                    </div>
+		                                    <div class="card-body pb-0">
+		                                        <div class="table-responsive">
+		                                            <div class="user-scroll" style="height:430px;position:relative;">
+                                                            {% if session['del']=='success' %}
+                                                                <p style="color: green;text-align: center;">Review Deleted Succesfully</p>
+                                                                {% set temp = session.pop("del", none)   %}
+                                                            {% elif session['del']=='error' %}
+                                                                <p style="color: red;text-align: center;">Review Not Deleted</p>
+                                                                {% set temp = session.pop("del", none)   %}
+                                                            {% endif%}
+
+                                                           
+		                                                <table class="table table-hover m-0">
+		                                                    <thead>
+		                                                        <tr>
+		                                                            <th>Staff ID</th>
+		                                                            <th>Name</th>
+		                                                            <th>Email</th>
+		                                                            <th>Age</th>
+		                                                            <th>Location</th>
+		                                                            <th>Phonenumber</th>
+		                                                    </thead>
+		                                                    <tbody>
+                                                                {% for staff_dict in staff_list %}
+                                                                    <tr>
+                                                                        <td id="staffid_{{staff_dict['staff_id']}}">{{ staff_dict['staff_id'] }}</td>
+                                                                        <td id="name_{{staff_dict['staff_id']}}">{{ staff_dict['staff_name'] }}</td>
+                                                                        <td id="email_{{staff_dict['staff_id']}}">{{ staff_dict['staff_email'] }}</td>
+                                                                        <td id="age_{{staff_dict['staff_id']}}">{{ staff_dict['staff_age'] }}</td>
+                                                                        <td id="location_{{staff_dict['staff_id']}}">{{ staff_dict['staff_location'] }}</td>
+                                                                        <td id="phonenumber_{{staff_dict['staff_id']}}">{{ staff_dict['staff_phonenumber'] }}</td>
+                                                                        <th><button class="btn btn-success" onclick='update_modal("{{staff_dict["staff_id"]}}")'>Update</button></th>
+                                                                        <th><a class="btn btn-danger" href="/delete-staff/{{staff_dict['staff_id']}}">Delete</a></th>
+                                                                    </tr>
+                                                                {% endfor %}
+		                                                        
+		                                                    </tbody>
+		                                                </table>
+		                                            </div>
+		                                        </div>
+		                                    </div>
+		                                </div>
+		                            </div> 
+                                </div>
+                            </div>
+                           
+                        </div>
+                        <!-- [ Main Content ] end -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- [ Main Content ] end -->
+
+
+
+
+<script src="{{ url_for('static', filename='plugins/bootstrap/js/bootstrap.bundle.min.js') }}"src="../assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="{{ url_for('static', filename='js/pcoded.min.js') }}"src="../assets/js/pcoded.min.js"></script>
+<script src="{{ url_for('static', filename='js/menu-setting.js') }}"src="../assets/js/menu-setting.js"></script>
+
+<!-- dashboard-custom js -->
+<script src="{{ url_for('static', filename='js/pages/dashboard-analytics.js') }}"></script>
+
+<script type="text/javascript">
+    function update_modal(id){
+        var staffid="staffid_"+id.toString()
+        var nameid="name_"+id.toString()
+        var emailid="email_"+id.toString()
+        var ageid="age_"+id.toString()
+        var locationid="location_"+id.toString()
+        var phonenumberid="phonenumber_"+id.toString()
+
+        document.getElementById('staffid').value= document.getElementById(staffid).innerHTML
+        document.getElementById('name').value= document.getElementById(nameid).innerHTML
+        document.getElementById('email').value= document.getElementById(emailid).innerHTML
+        document.getElementById('age').value= document.getElementById(ageid).innerHTML
+        document.getElementById('location').value= document.getElementById(locationid).innerHTML
+        document.getElementById('phonenumber').value= document.getElementById(phonenumberid).innerHTML
+
+        document.getElementById('staffid').readOnly = true
+        document.getElementById('submit').value = "Update"
+        document.getElementById('addform').action="/update-staff"
+
+
+    }
+</script>
+
+
+
+
+</body>
+
+</html>

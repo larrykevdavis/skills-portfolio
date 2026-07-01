@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Dasho - Bootstrap 5 Admin Template</title>
+    <!-- HTML5 Shim and Respond.js IE11 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 11]>
+    	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    	<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    	<![endif]-->
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description"
+    	content="Dasho Bootstrap admin template made using Bootstrap 5 and it has huge amount of ready made feature, UI components, pages which completely fulfills any dashboard needs." />
+    <meta name="keywords"
+    	content="admin templates, bootstrap admin templates, bootstrap 5, dashboard, dashboard templets, sass admin templets, html admin templates, responsive, bootstrap admin templates free download,premium bootstrap admin templates, Dasho, Dasho bootstrap admin template">
+    <meta name="author" content="Phoenixcoded" />
+
+ 	 <!-- fontawesome icon -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/fontawesome-all.min.css') }}">
+    <!-- animation css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='plugins/animation/css/animate.min.css') }}" >
+
+    <!-- notification css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='plugins/notification/css/notification.min.css') }}">
+
+    <!-- vendor css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body class="">
+	<!-- [ Pre-loader ] start -->
+	<div class="loader-bg">
+		<div class="loader-track">
+			<div class="loader-fill"></div>
+		</div>
+	</div>
+	<!-- [ Pre-loader ] End -->
+    <nav class="pcoded-navbar menupos-fixed menu-dark menu-item-icon-style6 ">
+        <div
+            class="navbar-wrapper ">
+            <div class="navbar-brand header-logo">
+                <a class="mobile-menu" id="mobile-collapse"><span></span></a>
+            </div>
+            <div class="navbar-content scroll-div" id="layout-sidenav">
+                <ul class="nav pcoded-inner-navbar sidenav-inner">
+                    <li class="nav-item">
+                        <a class="nav-link"><span class="pcoded-mtext">Dashboard</span></a>
+                        <ul class="pcoded-submenu">
+                            <li class="active"><a href="/book-flight" class=""><span class="pcoded-micon"><i class="feather icon-home"></i></span>Home</a></li>
+                            <li class=""><a href="/booking-history" class=""><span class="pcoded-micon"><i class="feather icon-home"></i></span>Booking History</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+<!-- [ Main Content ] start -->
+<div class="pcoded-main-container">
+    <div class="pcoded-wrapper">
+        <div class="pcoded-content">
+            <div class="pcoded-inner-content">
+                <div class="main-body">
+                    <div class="page-wrapper">
+                        <!-- [ breadcrumb ] start -->
+                        <div class="page-header">
+                            <div class="page-block">
+                                <div class="row align-items-center">
+                                    <div class="col-md-12">
+                                        <div class="page-header-title">
+                                            <h5 class="m-b-10">Sales</h5>
+                                        </div>
+                                        <ul class="breadcrumb">
+                                            <li class="breadcrumb-item"><a href=""><i
+                                                        class="feather icon-home"></i></a></li>
+                                            <li class="breadcrumb-item"><a href="#!">Flight Booking</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- [ breadcrumb ] end -->
+                        <!-- [ Main Content ] start -->
+                        <div class="row">
+                            <!-- support-section start -->
+                            {% if session['res']=='success' %}
+                            <p style="color: green">Flight Booked Successfully</p>
+                            {% set temp = session.pop("res", none)   %}
+                            {% elif session['res']=='error' %}
+                            <p style="color: red">Flight Not Booked</p>
+                            {% set temp = session.pop("res", none)   %}
+                            {% endif%}
+
+                            {% for non_booked_dict in non_booked %}
+                            <div class="col-xl-6 col-md-6">
+                                <div class="card support-bar">
+                                	 <div class="card-footer bg-purple text-white">
+                                        <div class="row text-center">
+                                            <div class="col">
+                                                <h4 class="m-0 text-white">From</h4>
+                                                <span>{{ non_booked_dict['route_source'] }}</span>
+                                            </div>
+                                            <div class="col">
+                                                <h4 class="m-0 text-white">To</h4>
+                                                <span>{{ non_booked_dict['route_destination'] }}</span>
+                                            </div>
+                                            <div class="col">
+                                                <h4 class="m-0 text-white">Airline</h4>
+                                                <span>{{ non_booked_dict['airline_name'] }}</span>
+                                            </div>
+                                           
+                                        </div>
+                                    </div>
+                                    <form action="/add-flight-booking" method="POST">
+                                    <input type="text" name="flight_id" value="{{non_booked_dict['flight_id']}}" hidden>
+                                    <input type="text" name="user_id" value="{{ session['user_id'] }}" hidden>
+                                    
+                                    <div class="card-body bg-purple text-white">
+                                    	<div class="row text-center">
+                                            <div class="col">
+                                                <h4 class="m-0 text-white">Flight Date</h4>
+                                                <span>{{ non_booked_dict['flight_date'] }}</span>
+                                            </div>
+                                            <div class="col ">
+                                                <h4 class="m-0 text-white">Flight Time</h4>
+                                                <span>{{ non_booked_dict['flight_time'] }}</span>
+                                            </div>
+                                            <div class="col-12">
+                                            	<div class="card bg-purple earning-date">
+		                                            <div class="card-block">
+		                                                <div class="bd-example bd-example-tabs">
+		                                                    <div class="tab-content" id="tabContent-pills">
+		                                                        <div class="tab-pane fade active show" id="earnings-mon"
+		                                                            role="tabpanel" aria-labelledby="pills-earnings-mon">
+		                                                           <select class="form-control" name="class">
+		                                                           		<option value="first">First Class</option>
+		                                                           		<option value="business">Business Class</option>
+		                                                           		<option value="economy">Economy Class</option>
+		                                                           </select>
+		                                                           <div>&nbsp;</div>
+		                                                           <div>&nbsp;</div>
+		                                                        </div>
+		                                                        <div class="tab-pane fade" id="earnings-tue" role="tabpanel"
+		                                                            aria-labelledby="pills-earnings-tue">
+		                                                           <select class="form-control" name="traveller">
+		                                                           		<option value="business">Business</option>
+		                                                           		<option value="solo_leisure">Solo Leisure</option>
+		                                                           		<option value="couple_leisure">Couple Leisure</option>
+		                                                           		<option value="family_leisure">Family Leisure</option>
+		                                                           </select>
+		                                                           <div>&nbsp;</div>
+		                                                           <div>&nbsp;</div>
+		                                                        </div>
+		                                                    </div>
+		                                                    <ul class="nav nav-pills align-items-center" id="pills-tab"
+		                                                        role="tablist">
+		                                                        <li class="nav-item">
+		                                                            <a class="nav-link active show" id="pills-earnings-mon"
+		                                                                data-bs-toggle="pill" href="#earnings-mon" role="tab"
+		                                                                aria-controls="earnings-mon"
+		                                                                aria-selected="false">Choose Class</a>
+		                                                        </li>
+		                                                        <li class="nav-item">
+		                                                            <a class="nav-link" id="pills-earnings-tue"
+		                                                                data-bs-toggle="pill" href="#earnings-tue" role="tab"
+		                                                                aria-controls="earnings-tue"
+		                                                                aria-selected="false">Choose Traveller Type</a>
+		                                                        </li>
+		                                                    </ul>
+		                                                </div>
+		                                            </div>
+                                        		</div>
+                                            </div> 
+                                        </div>
+                                    </div>
+
+                                    <div class="card-footer">
+                                    	    <div class="col ">
+                                               <input type="submit" class="btn btn-primary" value="Booking This Flight">
+                                            </div>
+                                       
+                                    </div>
+                                	</form>
+                                </div>
+                            </div>
+                            {% endfor %}
+                            <!-- support-section end -->
+                  
+                        </div>
+                        <!-- [ Main Content ] end -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- [ Main Content ] end -->
+
+
+
+<script src="{{ url_for('static', filename='plugins/bootstrap/js/popper.min.js') }}"src="../assets/plugins/bootstrap/js/popper.min.js"></script>
+<script src="{{ url_for('static', filename='plugins/bootstrap/js/bootstrap.bundle.min.js') }}"src="../assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="{{ url_for('static', filename='js/pcoded.min.js') }}"src="../assets/js/pcoded.min.js"></script>
+<script src="{{ url_for('static', filename='js/menu-setting.js') }}"src="../assets/js/menu-setting.js"></script>
+
+<!-- dashboard-custom js -->
+<script src="{{ url_for('static', filename='js/pages/dashboard-analytics.js') }}"></script>
+
+
+</body>
+
+</html>
